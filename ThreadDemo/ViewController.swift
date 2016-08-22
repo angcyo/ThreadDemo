@@ -79,13 +79,18 @@ class ViewController: UIViewController {
 
 	@IBAction func onMainThread() {
 		mainThread()
+		runOnThread()
 	}
 }
 
 extension ViewController {
 	func getThreadInfo() {
 		let thread = NSThread.currentThread()
-		let threadInfo = "线程名:\(thread.name)\n堆栈大小:\(thread.stackSize)\n优先级:\(thread.threadPriority)\n是否是主线程:\(thread.isMainThread)\n地址:\(NSThread.callStackReturnAddresses().first)-\(NSThread.callStackReturnAddresses().last!)"
+		let threadInfo = "线程名:\(thread.name)\n" +
+			"堆栈大小:\(thread.stackSize)\n" +
+			"优先级:\(thread.threadPriority)\n" +
+			"是否是主线程:\(thread.isMainThread)\n" +
+			"地址:\(NSThread.callStackReturnAddresses().first)-\(NSThread.callStackReturnAddresses().last!)"
 		print(threadInfo)
 		showOnUI(threadInfo)
 	}
@@ -147,24 +152,24 @@ extension ViewController {
 	// MARK: ns block 会在当前线程执行,并且是一个 并行队列
 	func blockOperation() {
 		// 并行队列,多任务会同时进行
-//		NSBlockOperation {
-//			print("blockOperation")
-//			self.getThreadInfo()
-//		}.start()
+		NSBlockOperation {
+			print("blockOperation")
+			self.getThreadInfo()
+		}.start()
 
-		let block = NSBlockOperation {
-			print("blockOperation1")
-			self.getThreadInfo()
-		}
-		block.addExecutionBlock {
-			print("blockOperation2")
-			self.getThreadInfo()
-		}
-		block.addExecutionBlock {
-			print("blockOperation3")
-			self.getThreadInfo()
-		}
-		block.start() // 并行执行1,2,3个任务, 执行顺序不保证
+//		let block = NSBlockOperation {
+//			print("blockOperation1")
+//			self.getThreadInfo()
+//		}
+//		block.addExecutionBlock {
+//			print("blockOperation2")
+//			self.getThreadInfo()
+//		}
+//		block.addExecutionBlock {
+//			print("blockOperation3")
+//			self.getThreadInfo()
+//		}
+//		block.start() // 并行执行1,2,3个任务, 执行顺序不保证
 	}
 
 	// MARK: 添加到队列的block会立即执行,
@@ -203,6 +208,18 @@ extension ViewController {
 		// 2->在主线程执行
 		NSOperationQueue.mainQueue().addOperationWithBlock {
 			print("mainQueue")
+			self.getThreadInfo()
+		}
+	}
+
+	func runOnThread() {
+		NSOperationQueue().addOperationWithBlock {
+			print("runOnThread")
+			self.getThreadInfo()
+		}
+
+		NSOperationQueue.currentQueue()?.addOperationWithBlock {
+			print("currentQueue")
 			self.getThreadInfo()
 		}
 	}
