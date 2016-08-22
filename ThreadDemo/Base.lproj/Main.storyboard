@@ -18,76 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hxr-2Z-Dyu">
-                                <rect key="frame" x="20" y="20" width="221" height="350"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyR-n0-KKg">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="30"/>
-                                        <state key="normal" title="获取当前线程信息"/>
-                                        <connections>
-                                            <action selector="onGetThreadInfo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eTC-Zu-HPK"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2t-Qm-kZw">
-                                        <rect key="frame" x="0.0" y="40" width="105" height="30"/>
-                                        <state key="normal" title="简单子线程执行"/>
-                                        <connections>
-                                            <action selector="onSingleThread:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KF4-Wu-sch"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzc-hV-nlz">
-                                        <rect key="frame" x="0.0" y="80" width="105" height="30"/>
-                                        <state key="normal" title="创建并执行线程"/>
-                                        <connections>
-                                            <action selector="onCreateAndRun:" destination="BYZ-38-t0r" eventType="touchUpInside" id="htV-13-HGn"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eq2-ui-dyV">
-                                        <rect key="frame" x="0.0" y="120" width="221" height="30"/>
-                                        <state key="normal" title="主队列同步调用(会阻塞当前线程)"/>
-                                        <connections>
-                                            <action selector="onMainSync" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q15-nr-8vU"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8i-bW-ffL">
-                                        <rect key="frame" x="0.0" y="160" width="105" height="30"/>
-                                        <state key="normal" title="主队列异步调用"/>
-                                        <connections>
-                                            <action selector="onMainAsync" destination="BYZ-38-t0r" eventType="touchUpInside" id="vVO-sI-wfJ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1c-sX-EcK">
-                                        <rect key="frame" x="0.0" y="200" width="105" height="30"/>
-                                        <state key="normal" title="自定义串行队列"/>
-                                        <connections>
-                                            <action selector="onSerialQueue" destination="BYZ-38-t0r" eventType="touchUpInside" id="alg-xG-dxU"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aon-W5-vkN">
-                                        <rect key="frame" x="0.0" y="240" width="105" height="30"/>
-                                        <state key="normal" title="自定义并行队列"/>
-                                        <connections>
-                                            <action selector="onConcurrentQueue" destination="BYZ-38-t0r" eventType="touchUpInside" id="ul1-Rc-B4Z"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBO-kz-SBw">
-                                        <rect key="frame" x="0.0" y="280" width="126" height="30"/>
-                                        <state key="normal" title="NSBlockOperation"/>
-                                        <connections>
-                                            <action selector="onBlockOperation" destination="BYZ-38-t0r" eventType="touchUpInside" id="Adr-Hz-CYS"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXf-KP-y6z">
-                                        <rect key="frame" x="0.0" y="320" width="134" height="30"/>
-                                        <state key="normal" title="NSOperationQueue"/>
-                                        <connections>
-                                            <action selector="onBlockOperationQueue" destination="BYZ-38-t0r" eventType="touchUpInside" id="qSx-uJ-SBJ"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mqf-Qh-L1R">
-                                <rect key="frame" x="20" y="478" width="560" height="120"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mqf-Qh-L1R">
+                                <rect key="frame" x="20" y="480" width="560" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="nJG-ag-hNP"/>
                                 </constraints>
@@ -95,11 +27,87 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hxr-2Z-Dyu">
+                                <rect key="frame" x="178" y="28" width="221" height="345"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyR-n0-KKg">
+                                        <rect key="frame" x="51" y="0.0" width="120" height="30"/>
+                                        <state key="normal" title="获取当前线程信息"/>
+                                        <connections>
+                                            <action selector="onGetThreadInfo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eTC-Zu-HPK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2t-Qm-kZw">
+                                        <rect key="frame" x="58" y="35" width="105" height="30"/>
+                                        <state key="normal" title="简单子线程执行"/>
+                                        <connections>
+                                            <action selector="onSingleThread:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KF4-Wu-sch"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzc-hV-nlz">
+                                        <rect key="frame" x="58" y="70" width="105" height="30"/>
+                                        <state key="normal" title="创建并执行线程"/>
+                                        <connections>
+                                            <action selector="onCreateAndRun:" destination="BYZ-38-t0r" eventType="touchUpInside" id="htV-13-HGn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eq2-ui-dyV">
+                                        <rect key="frame" x="0.0" y="105" width="221" height="30"/>
+                                        <state key="normal" title="主队列同步调用(会阻塞当前线程)"/>
+                                        <connections>
+                                            <action selector="onMainSync" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q15-nr-8vU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8i-bW-ffL">
+                                        <rect key="frame" x="58" y="140" width="105" height="30"/>
+                                        <state key="normal" title="主队列异步调用"/>
+                                        <connections>
+                                            <action selector="onMainAsync" destination="BYZ-38-t0r" eventType="touchUpInside" id="vVO-sI-wfJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1c-sX-EcK">
+                                        <rect key="frame" x="58" y="175" width="105" height="30"/>
+                                        <state key="normal" title="自定义串行队列"/>
+                                        <connections>
+                                            <action selector="onSerialQueue" destination="BYZ-38-t0r" eventType="touchUpInside" id="alg-xG-dxU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aon-W5-vkN">
+                                        <rect key="frame" x="58" y="210" width="105" height="30"/>
+                                        <state key="normal" title="自定义并行队列"/>
+                                        <connections>
+                                            <action selector="onConcurrentQueue" destination="BYZ-38-t0r" eventType="touchUpInside" id="ul1-Rc-B4Z"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBO-kz-SBw">
+                                        <rect key="frame" x="48" y="245" width="126" height="30"/>
+                                        <state key="normal" title="NSBlockOperation"/>
+                                        <connections>
+                                            <action selector="onBlockOperation" destination="BYZ-38-t0r" eventType="touchUpInside" id="Adr-Hz-CYS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXf-KP-y6z">
+                                        <rect key="frame" x="44" y="280" width="134" height="30"/>
+                                        <state key="normal" title="NSOperationQueue"/>
+                                        <connections>
+                                            <action selector="onBlockOperationQueue" destination="BYZ-38-t0r" eventType="touchUpInside" id="qSx-uJ-SBJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7AB-uU-6er">
+                                        <rect key="frame" x="73" y="315" width="75" height="30"/>
+                                        <state key="normal" title="主线程调用"/>
+                                        <connections>
+                                            <action selector="onMainThread" destination="BYZ-38-t0r" eventType="touchUpInside" id="MnQ-gu-r8V"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="hxr-2Z-Dyu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-11.5" id="Ek4-OA-hkR"/>
                             <constraint firstItem="Mqf-Qh-L1R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="WNv-bS-sOO"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mqf-Qh-L1R" secondAttribute="bottom" constant="2" id="kKj-if-8Io"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mqf-Qh-L1R" secondAttribute="bottom" id="kKj-if-8Io"/>
                             <constraint firstItem="Mqf-Qh-L1R" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="unk-7q-npH"/>
                         </constraints>
                     </view>

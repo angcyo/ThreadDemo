@@ -76,6 +76,10 @@ class ViewController: UIViewController {
 	@IBAction func onBlockOperation() {
 		blockOperation()
 	}
+
+	@IBAction func onMainThread() {
+		mainThread()
+	}
 }
 
 extension ViewController {
@@ -186,6 +190,21 @@ extension ViewController {
 		operation2.addDependency(operation1) // 2会等待1执行完后,再执行
 		operation3.addDependency(operation2) // 3会等待2执行完后,再执行
 		queue.addOperations([operation1, operation2, operation3], waitUntilFinished: true) //
+	}
+
+	// MARK: 一定在主线程回调
+	func mainThread() {
+		// 1->在主线程的队列执行
+		dispatch_async(dispatch_get_main_queue()) {
+			print("dispatch_async")
+			self.getThreadInfo()
+		}
+
+		// 2->在主线程执行
+		NSOperationQueue.mainQueue().addOperationWithBlock {
+			print("mainQueue")
+			self.getThreadInfo()
+		}
 	}
 
 	func onThreadRun() {
