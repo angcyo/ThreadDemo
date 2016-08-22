@@ -60,6 +60,14 @@ class ViewController: UIViewController {
 	@IBAction func onMainAsync() {
 		gcdMainQueueAsync()
 	}
+
+	@IBAction func onSerialQueue() {
+		gcdCustomSerialQueue()
+	}
+
+	@IBAction func onConcurrentQueue() {
+		gcdCustomConcurrentQueue()
+	}
 }
 
 extension ViewController {
@@ -96,32 +104,32 @@ extension ViewController {
 		}
 	}
 
-    //MARK: 自定义一个同步队列
+	// MARK: 自定义一个同步队列
 	func gcdCustomSerialQueue() {
 		let queue = dispatch_queue_create("serial_queue", DISPATCH_QUEUE_SERIAL)
-        //同步调用
-		dispatch_sync(queue) {
-			print("custom_queue")
-			self.getThreadInfo()
-		}
-        //异步调用
-//		dispatch_async(queue) {
+		// 同步调用,主线程执行
+//		dispatch_sync(queue) {
 //			print("custom_queue")
 //			self.getThreadInfo()
 //		}
+		// 异步调用,子线程执行
+		dispatch_async(queue) {
+			print("custom_queue")
+			self.getThreadInfo()
+		}
 	}
 
-    //MARK: 自定义一个异步队列
+	// MARK: 自定义一个异步队列
 	func gcdCustomConcurrentQueue() {
-        let queue = dispatch_queue_create("serial_queue", DISPATCH_QUEUE_CONCURRENT)
-        dispatch_sync(queue) {
-            print("custom_queue")
-            self.getThreadInfo()
-        }
-//        dispatch_async(queue) {
-//            print("custom_queue")
-//            self.getThreadInfo()
-//        }
+		let queue = dispatch_queue_create("serial_queue", DISPATCH_QUEUE_CONCURRENT)
+//		dispatch_sync(queue) {
+//			print("custom_queue")
+//			self.getThreadInfo()
+//		}
+		dispatch_async(queue) {
+			print("custom_queue")
+			self.getThreadInfo()
+		}
 	}
 
 	func onThreadRun() {

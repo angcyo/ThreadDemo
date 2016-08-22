@@ -28,7 +28,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hxr-2Z-Dyu">
-                                <rect key="frame" x="20" y="20" width="221" height="190"/>
+                                <rect key="frame" x="20" y="20" width="221" height="270"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyR-n0-KKg">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="30"/>
@@ -63,6 +63,20 @@
                                         <state key="normal" title="主队列异步调用"/>
                                         <connections>
                                             <action selector="onMainAsync" destination="BYZ-38-t0r" eventType="touchUpInside" id="vVO-sI-wfJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1c-sX-EcK">
+                                        <rect key="frame" x="0.0" y="200" width="105" height="30"/>
+                                        <state key="normal" title="自定义串行队列"/>
+                                        <connections>
+                                            <action selector="onSerialQueue" destination="BYZ-38-t0r" eventType="touchUpInside" id="alg-xG-dxU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aon-W5-vkN">
+                                        <rect key="frame" x="0.0" y="240" width="105" height="30"/>
+                                        <state key="normal" title="自定义并行队列"/>
+                                        <connections>
+                                            <action selector="onConcurrentQueue" destination="BYZ-38-t0r" eventType="touchUpInside" id="ul1-Rc-B4Z"/>
                                         </connections>
                                     </button>
                                 </subviews>
