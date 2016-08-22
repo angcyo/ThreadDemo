@@ -37,28 +37,28 @@
                                             <action selector="onGetThreadInfo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eTC-Zu-HPK"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2t-Qm-kZw">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2t-Qm-kZw">
                                         <rect key="frame" x="0.0" y="40" width="105" height="30"/>
                                         <state key="normal" title="简单子线程执行"/>
                                         <connections>
                                             <action selector="onSingleThread:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KF4-Wu-sch"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzc-hV-nlz">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzc-hV-nlz">
                                         <rect key="frame" x="0.0" y="80" width="105" height="30"/>
                                         <state key="normal" title="创建并执行线程"/>
                                         <connections>
                                             <action selector="onCreateAndRun:" destination="BYZ-38-t0r" eventType="touchUpInside" id="htV-13-HGn"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eq2-ui-dyV">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eq2-ui-dyV">
                                         <rect key="frame" x="0.0" y="120" width="221" height="30"/>
                                         <state key="normal" title="主队列同步调用(会阻塞当前线程)"/>
                                         <connections>
                                             <action selector="onMainSync" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q15-nr-8vU"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8i-bW-ffL">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8i-bW-ffL">
                                         <rect key="frame" x="0.0" y="160" width="105" height="30"/>
                                         <state key="normal" title="主队列异步调用"/>
                                         <connections>

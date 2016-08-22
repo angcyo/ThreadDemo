@@ -88,12 +88,40 @@ extension ViewController {
 		}
 	}
 
-    //MARK: 添加一个block到主队列,异步执行,不会阻塞当前线程
+	// MARK: 添加一个block到主队列,异步执行,不会阻塞当前线程
 	func gcdMainQueueAsync() {
 		dispatch_async(dispatch_get_main_queue()) {
 			print("main_async")
 			self.getThreadInfo()
 		}
+	}
+
+    //MARK: 自定义一个同步队列
+	func gcdCustomSerialQueue() {
+		let queue = dispatch_queue_create("serial_queue", DISPATCH_QUEUE_SERIAL)
+        //同步调用
+		dispatch_sync(queue) {
+			print("custom_queue")
+			self.getThreadInfo()
+		}
+        //异步调用
+//		dispatch_async(queue) {
+//			print("custom_queue")
+//			self.getThreadInfo()
+//		}
+	}
+
+    //MARK: 自定义一个异步队列
+	func gcdCustomConcurrentQueue() {
+        let queue = dispatch_queue_create("serial_queue", DISPATCH_QUEUE_CONCURRENT)
+        dispatch_sync(queue) {
+            print("custom_queue")
+            self.getThreadInfo()
+        }
+//        dispatch_async(queue) {
+//            print("custom_queue")
+//            self.getThreadInfo()
+//        }
 	}
 
 	func onThreadRun() {
