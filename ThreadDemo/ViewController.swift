@@ -68,6 +68,14 @@ class ViewController: UIViewController {
 	@IBAction func onConcurrentQueue() {
 		gcdCustomConcurrentQueue()
 	}
+
+	@IBAction func onBlockOperationQueue() {
+		blockOperationQueue()
+	}
+
+	@IBAction func onBlockOperation() {
+		blockOperation()
+	}
 }
 
 extension ViewController {
@@ -107,7 +115,7 @@ extension ViewController {
 	// MARK: 自定义一个同步队列
 	func gcdCustomSerialQueue() {
 		let queue = dispatch_queue_create("serial_queue", DISPATCH_QUEUE_SERIAL)
-		// 同步调用,主线程执行
+		// 同步调用,当前线程执行
 //		dispatch_sync(queue) {
 //			print("custom_queue")
 //			self.getThreadInfo()
@@ -130,6 +138,54 @@ extension ViewController {
 			print("custom_queue")
 			self.getThreadInfo()
 		}
+	}
+
+	// MARK: ns block 会在当前线程执行,并且是一个 并行队列
+	func blockOperation() {
+		// 并行队列,多任务会同时进行
+//		NSBlockOperation {
+//			print("blockOperation")
+//			self.getThreadInfo()
+//		}.start()
+
+		let block = NSBlockOperation {
+			print("blockOperation1")
+			self.getThreadInfo()
+		}
+		block.addExecutionBlock {
+			print("blockOperation2")
+			self.getThreadInfo()
+		}
+		block.addExecutionBlock {
+			print("blockOperation3")
+			self.getThreadInfo()
+		}
+		block.start() // 并行执行1,2,3个任务, 执行顺序不保证
+	}
+
+	// MARK: 添加到队列的block会立即执行,
+	func blockOperationQueue() {
+		let queue = NSOperationQueue()
+//		queue.addOperationWithBlock {
+//			print("blockOperationQueue")
+//			self.getThreadInfo()
+//		}
+
+		let operation1 = NSBlockOperation {
+			print("operation1")
+			self.getThreadInfo()
+		}
+		let operation2 = NSBlockOperation {
+			print("operation2")
+			self.getThreadInfo()
+		}
+		let operation3 = NSBlockOperation {
+			print("operation3")
+			self.getThreadInfo()
+		}
+		operation2.addDependency(operation1) // 2会等待1执行完后,再执行
+		operation3.addDependency(operation2) // 3会等待2执行完后,再执行
+		queue.addOperations([operation1, operation2, operation3], waitUntilFinished: true) //
 	}
 
 	func onThreadRun() {
