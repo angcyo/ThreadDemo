@@ -24,11 +24,11 @@
                                     <constraint firstAttribute="height" constant="120" id="nJG-ag-hNP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hxr-2Z-Dyu">
-                                <rect key="frame" x="178" y="28" width="221" height="345"/>
+                                <rect key="frame" x="178" y="28" width="221" height="380"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyR-n0-KKg">
                                         <rect key="frame" x="51" y="0.0" width="120" height="30"/>
@@ -37,67 +37,74 @@
                                             <action selector="onGetThreadInfo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eTC-Zu-HPK"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2t-Qm-kZw">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2t-Qm-kZw">
                                         <rect key="frame" x="58" y="35" width="105" height="30"/>
                                         <state key="normal" title="简单子线程执行"/>
                                         <connections>
                                             <action selector="onSingleThread:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KF4-Wu-sch"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzc-hV-nlz">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzc-hV-nlz">
                                         <rect key="frame" x="58" y="70" width="105" height="30"/>
                                         <state key="normal" title="创建并执行线程"/>
                                         <connections>
                                             <action selector="onCreateAndRun:" destination="BYZ-38-t0r" eventType="touchUpInside" id="htV-13-HGn"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eq2-ui-dyV">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eq2-ui-dyV">
                                         <rect key="frame" x="0.0" y="105" width="221" height="30"/>
                                         <state key="normal" title="主队列同步调用(会阻塞当前线程)"/>
                                         <connections>
                                             <action selector="onMainSync" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q15-nr-8vU"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8i-bW-ffL">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8i-bW-ffL">
                                         <rect key="frame" x="58" y="140" width="105" height="30"/>
                                         <state key="normal" title="主队列异步调用"/>
                                         <connections>
                                             <action selector="onMainAsync" destination="BYZ-38-t0r" eventType="touchUpInside" id="vVO-sI-wfJ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1c-sX-EcK">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1c-sX-EcK">
                                         <rect key="frame" x="58" y="175" width="105" height="30"/>
                                         <state key="normal" title="自定义串行队列"/>
                                         <connections>
                                             <action selector="onSerialQueue" destination="BYZ-38-t0r" eventType="touchUpInside" id="alg-xG-dxU"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aon-W5-vkN">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aon-W5-vkN">
                                         <rect key="frame" x="58" y="210" width="105" height="30"/>
                                         <state key="normal" title="自定义并行队列"/>
                                         <connections>
                                             <action selector="onConcurrentQueue" destination="BYZ-38-t0r" eventType="touchUpInside" id="ul1-Rc-B4Z"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBO-kz-SBw">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBO-kz-SBw">
                                         <rect key="frame" x="48" y="245" width="126" height="30"/>
                                         <state key="normal" title="NSBlockOperation"/>
                                         <connections>
                                             <action selector="onBlockOperation" destination="BYZ-38-t0r" eventType="touchUpInside" id="Adr-Hz-CYS"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXf-KP-y6z">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXf-KP-y6z">
                                         <rect key="frame" x="44" y="280" width="134" height="30"/>
                                         <state key="normal" title="NSOperationQueue"/>
                                         <connections>
                                             <action selector="onBlockOperationQueue" destination="BYZ-38-t0r" eventType="touchUpInside" id="qSx-uJ-SBJ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7AB-uU-6er">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7AB-uU-6er">
                                         <rect key="frame" x="73" y="315" width="75" height="30"/>
                                         <state key="normal" title="主线程调用"/>
                                         <connections>
                                             <action selector="onMainThread" destination="BYZ-38-t0r" eventType="touchUpInside" id="MnQ-gu-r8V"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KR-f0-oh3">
+                                        <rect key="frame" x="90" y="350" width="41" height="30"/>
+                                        <state key="normal" title="Demo"/>
+                                        <connections>
+                                            <action selector="onDemo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CI1-0o-J97"/>
                                         </connections>
                                     </button>
                                 </subviews>

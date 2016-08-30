@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
 	@IBOutlet weak var infoLabel: UILabel!
 
+	let queue = NSOperationQueue()
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
@@ -80,6 +82,33 @@ class ViewController: UIViewController {
 	@IBAction func onMainThread() {
 		mainThread()
 		runOnThread()
+	}
+	@IBAction func onDemo(sender: AnyObject) {
+		queue.addOperationWithBlock {
+			print("-->1 start")
+			NSThread.sleepForTimeInterval(3)
+			print("-->1 end")
+		}
+		queue.addOperationWithBlock {
+			print("-->2 start")
+			NSThread.sleepForTimeInterval(3)
+			print("-->2 end")
+		}
+		queue.addOperationWithBlock {
+			print("-->3 start")
+			NSThread.sleepForTimeInterval(3)
+			print("-->3 end")
+		}
+		queue.addOperationWithBlock {
+			print("-->4 start")
+			NSThread.sleepForTimeInterval(3)
+			print("-->4 end")
+		}
+		queue.addOperationWithBlock {
+			print("-->5 start")
+			NSThread.sleepForTimeInterval(3)
+			print("-->5 end")
+		}
 	}
 }
 
